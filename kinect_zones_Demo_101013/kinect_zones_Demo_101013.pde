@@ -60,7 +60,12 @@ void draw() {
   }
   updatePixels();
   
-  for(Zone z : zones) z.draw();
+  for(Zone z : zones) {
+    z.update();
+    z.draw();
+    if(z.isActive()) println(z.getTimesInvaded());
+  }
+  
 }
 
 void keyPressed() {
