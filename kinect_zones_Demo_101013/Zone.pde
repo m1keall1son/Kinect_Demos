@@ -6,7 +6,7 @@ class Zone {
   int activeCount;
   int timesInvaded;
   boolean active;
-  boolean addOne;
+  boolean addInvasion;
   
   Zone(int _x, int _y, int _w, int _h) {
     x = _x;
@@ -16,7 +16,7 @@ class Zone {
     activeCount = 0;
     timesInvaded = 0;
     active = false;
-    addOne = false;
+    addInvasion = false;
   }
 
   void add( int inc ) {
@@ -28,12 +28,12 @@ class Zone {
    if (activeCount > 30) active = true;
    else active = false;
    
-   if(active && !addOne){
+   if(active && !addInvasion){
      timesInvaded++;
-     addOne = true;
+     addInvasion = true;
    }
    
-   if(!active) addOne = false;
+   if(!active) addInvasion = false;
     
   }
 
